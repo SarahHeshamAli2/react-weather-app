@@ -1,10 +1,15 @@
+
+
+
 body {
   background-image: url('./assets//imgs/second-theme.jpg');
   height: 100vh;
   background-size: 100% 100%;
   background-size: cover;
-  font-family: 'Shantell Sans', cursive;
   color: white;
+  font-family: cursive;
+  font-weight: 500;
+  font-style: normal;
 }
 
 
@@ -94,10 +99,12 @@ body {
    }
    .searching {
     display: block !important;
-    margin-left: unset;
+    margin-left: unset ;
     margin: 20px 0;
    }
-  
+  .spc-form {
+    margin-left: unset !important;
+  }
 }
 
  @media screen and (min-width: 400.98px) and  (max-width: 767px) {

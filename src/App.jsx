@@ -79,16 +79,16 @@ return <>
 }
 
 {
-    foreCastList?.slice(0,1).map((day)=>{
+    foreCastList?.slice(0,1).map((day,ind)=>{
         
-        return <div class="row spc-row1 px-5  align-items-center py-3">
+        return <div key={ind} className="row spc-row1 px-5  align-items-center py-3">
 
 
 
 
 
-        <div class="col-md-4 col-sm-12 px-5">
-            <div class="weather-icon text-center " >
+        <div className="col-md-4 col-sm-12 px-5">
+            <div className="weather-icon text-center " >
                     <div id="icon">
           <img src={'http://openweathermap.org/img/w/'+day.weather[0].icon+'.png'} alt="weather icon" className='w-50' />
                     </div>
@@ -96,16 +96,16 @@ return <>
                 
             </div>
         </div>
-        <div class="col-md-4   ">
-        <div class="time">
+        <div className="col-md-4   ">
+        <div className="time">
            <p> {currentDay}</p>
-        <span class="currentDay">{day.dt_txt.split(" ").slice(0,1).join().split('-').reverse().join('-')
+        <span className="currentDay">{day.dt_txt.split(" ").slice(0,1).join().split('-').reverse().join('-')
         }</span>
-        <span class="currentDayInNum"></span>
-        <div class="temp my-2" id="currentTemp">
+        <span className="currentDayInNum"></span>
+        <div className="temp my-2" id="currentTemp">
             {day.main.temp}°C
         </div>
-        <div class="feels-like my-2" id="feelsLike">
+        <div className="feels-like my-2" id="feelsLike">
             <p>feels like : <span className='fw-bold'>{day.main.feels_like}°C</span></p>
         </div>
         <div id="condition">
@@ -115,8 +115,8 @@ return <>
         </div>
         </div>
         
-        <div class="col-md-4  px-5 remove-div">
-        <div class="more-detail">
+        <div className="col-md-4  px-5 remove-div">
+        <div className="more-detail">
         <h5>More detail</h5>
         <p id="wind-speed">wind speed: <span className='fw-bold'>{day.wind.speed}kph</span></p>
         <p id="humi">air humidity:{day.main.humidity}%</p>
@@ -131,28 +131,28 @@ return <>
 
 
 </div>
-<div class="mt-5 ">
-    <div class="container ">
-        <div class=" d-flex justify-content-between spc-row  spc-w text-center">
+<div className="mt-5 ">
+    <div className="container ">
+        <div className=" d-flex justify-content-between spc-row  spc-w text-center">
         {
-            foreCastList?.slice(1,).map((day)=>      <div class="  mx-4 daysFore">
-            <div class="1stDay">
+            foreCastList?.slice(1,).map((day,ind)=>      <div key={ind} className="  mx-4 daysFore">
+            <div className="1stDay">
                 
-                <div class="date my-2">
-                <span class="currentDay">{day.dt_txt.split(" ").slice(0,1).join().split('-').reverse().slice(0,2).join('-')
+                <div className="date my-2">
+                <span className="currentDay">{day.dt_txt.split(" ").slice(0,1).join().split('-').reverse().slice(0,2).join('-')
                 
         }</span>
                 </div>
-                <div class="min my-2">
+                <div className="min my-2">
                    min <span>{day.main.temp_min}°C</span>
                 </div>
-                <div class="max">
+                <div className="max">
                   max <span> {day.main.temp_max}°C</span>
                 </div>
                 <div id="icon">
           <img src={'http://openweathermap.org/img/w/'+day.weather[0].icon+'.png'} alt="" />
                     </div>
-                <div class="desc">
+                <div className="desc">
                 <p>{day.weather[0].description}</p>
                 </div>
             </div>
